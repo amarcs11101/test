@@ -55,7 +55,7 @@ public class EmployeeController {
 	 * @return
 	 */
 	@PutMapping("/place/{place}/salary/{percentage}")
-	@ApiOperation(value = "Save vehicle details", response = ResponseEntity.class)
+	@ApiOperation(value = "updated employee details", response = ResponseEntity.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully updated employee details"),
 			@ApiResponse(code = 401, message = "Unauthorised Access"), @ApiResponse(code = 403, message = "forbidden"),
 			@ApiResponse(code = 404, message = "resource not found") })
