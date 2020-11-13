@@ -88,6 +88,10 @@ public class EmployeeController {
 	 * @return
 	 */
 	@GetMapping("/page")
+	@ApiOperation(value = "employee details with pagination", response = ResponseEntity.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "success"),
+			@ApiResponse(code = 401, message = "Unauthorised Access"), @ApiResponse(code = 403, message = "forbidden"),
+			@ApiResponse(code = 404, message = "resource not found") })
 	public ResponseEntity<Object> getAllEmployeeWithPagination(
 			@RequestParam(value = "limit", defaultValue = "5") Integer limit,
 			@RequestParam(value = "offSet", defaultValue = "0") Integer offSet) {
@@ -113,6 +117,10 @@ public class EmployeeController {
 	 */
 
 	@GetMapping("/range/{competency}")
+	@ApiOperation(value = "competency details", response = ResponseEntity.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success"),
+			@ApiResponse(code = 401, message = "Unauthorised Access"), @ApiResponse(code = 403, message = "forbidden"),
+			@ApiResponse(code = 404, message = "resource not found") })
 	public ResponseEntity<Object> getEmployeeDetailsByCompetecies(
 			@PathVariable("competency") @NotNull String competencies) {
 		ApiResponse response = null;
